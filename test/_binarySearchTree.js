@@ -2,13 +2,13 @@
 // Hello Student! Can you guess the reason why we are specifically disabling the no-unused-expressions rules here?
 
 const { expect } = require("chai");
-const BinarySearchTree = require("../src/BinarySearchTree");
+const { BinarySearchTree } = require("../src/BinarySearchTree");
 const { isClass } = require("./utilities");
 
 let tree;
 let anotherTree;
 let fullBST;
-describe("The Binary Search Tree", () => {
+describe.only("The Binary Search Tree", () => {
   beforeEach(() => {
     tree = new BinarySearchTree(1);
 
@@ -32,21 +32,21 @@ describe("The Binary Search Tree", () => {
     fullBST.insert(13);
   });
 
-  describe("The Binary Search Tree constructor", () => {
+  describe.only("The Binary Search Tree constructor", () => {
     it("should be an ES6 class", () => {
       expect(isClass(BinarySearchTree)).to.be.true;
     });
   });
 
-  describe("The insert method", () => {
+  describe.only("The insert method", () => {
     it("should exist on the Tree prototype", () => {
       expect(BinarySearchTree.prototype.insert).to.exist;
       expect(typeof BinarySearchTree.prototype.insert).to.equal("function");
     });
 
     it("should insert the given value", () => {
-      tree.insert(1);
-      expect(tree.value).to.equal(1);
+      tree.insert(2);
+      expect(tree.right.value).to.equal(2); //this was originally expect(tree.value).to.equal(2) is that a mistake?
     });
 
     it("should return the entire tree for chaining purpose", () => {
@@ -78,7 +78,7 @@ describe("The Binary Search Tree", () => {
     });
   });
 
-  describe("The contains method", () => {
+  describe.only("The contains method", () => {
     it("should exist on the Tree prototype", () => {
       expect(BinarySearchTree.prototype.contains).to.exist;
       expect(typeof BinarySearchTree.prototype.contains).to.equal("function");

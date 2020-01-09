@@ -40,20 +40,6 @@ class Tree {
         }
       }
     }
-
-    // function recurse(node) {
-    //   if (node.value === value) {
-    //     node = undefined;
-    //     return value;
-    //   }
-
-    //   for (let i = 0; i < this.children.length; i++) {
-    //     if (this.children[i].contains(value)) {
-    //       this.remove(this.children[i]);
-    //     }
-    //   }
-    // }
-    // recurse(node);
   }
 }
 
