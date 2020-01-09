@@ -4,11 +4,32 @@ class Tree {
     this.children = [];
   }
 
-  addChild(value) {}
+  addChild(value) {
+    let newTree = new Tree(value);
+    this.children.push(newTree);
+    return newTree;
+  }
 
-  contains(value) {}
+  contains(value) {
+    let result = false;
 
-  /*
+    if (this.value === value) {
+      result = true;
+      return result;
+    }
+
+    for (let i = 0; i < this.children.length; i++) {
+      if (this.children[i].contains(value)) {
+        result = true;
+      }
+    }
+    return result;
+  }
+}
+
+module.exports = { Tree: Tree };
+
+/*
 +-------------------------+
 | Advanced Requirements!! |
 +-------------------------+
@@ -18,6 +39,7 @@ Do not proceed until you are done with the basic
 requirements for ALL data structures in this exercise.
 
 */
+/*
   traverseDepthFirst(fn) {}
 
   traverseBreadthFirst(fn) {}
