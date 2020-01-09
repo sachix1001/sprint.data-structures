@@ -25,6 +25,36 @@ class Tree {
     }
     return result;
   }
+  remove(value) {
+    if (this.value === value) {
+      let result = this.value;
+      this.value = null;
+      return result;
+    }
+    for (let i = 0; i < this.children.length; i++) {
+      if (this.children[i].contains(value)) {
+        if (this.children[i].value === value) {
+          let result = this.children[i].value;
+          this.children[i].value = null;
+          return result;
+        }
+      }
+    }
+
+    // function recurse(node) {
+    //   if (node.value === value) {
+    //     node = undefined;
+    //     return value;
+    //   }
+
+    //   for (let i = 0; i < this.children.length; i++) {
+    //     if (this.children[i].contains(value)) {
+    //       this.remove(this.children[i]);
+    //     }
+    //   }
+    // }
+    // recurse(node);
+  }
 }
 
 module.exports = { Tree: Tree };

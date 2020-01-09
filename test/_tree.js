@@ -62,6 +62,13 @@ describe.only("Trees", () => {
       expect(tree.contains(5)).to.equal(true);
     });
   });
+  describe("remove", () => {
+    it("shold be removed", () => {
+      tree.addChild(2);
+      tree.remove(2);
+      expect(tree.contains(2)).to.equal(false);
+    });
+  });
 
   /*
 +-------------------------+
