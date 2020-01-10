@@ -2,7 +2,7 @@
 
 const { expect } = require("chai");
 const { isClass } = require("./utilities");
-const Graph = require("../src/Graph");
+const { Graph } = require("../src/Graph");
 
 let graph;
 describe("Graphs", () => {
@@ -159,6 +159,7 @@ describe("Graphs", () => {
       expect(graph.hasEdge(5, 3)).to.be.true;
       expect(graph.hasEdge(3, 5)).to.be.true;
       expect(graph.hasEdge(6, 3)).to.be.false;
+      expect(graph.hasEdge(7, 3)).to.be.false;
     });
   });
 
