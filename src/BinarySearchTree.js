@@ -14,14 +14,13 @@ class BinarySearchTree {
     if (val < this.value) {
       if (!this.left) {
         this.left = inserted;
-        return this;
       }
       this.left.insert(val);
     }
-    if (!this.right) {
-      this.right = inserted;
-      return this;
-    } else {
+    if (val > this.value) {
+      if (!this.right) {
+        this.right = inserted;
+      }
       this.right.insert(val);
     }
     return this;
@@ -54,16 +53,13 @@ class BinarySearchTree {
   // }
 
   traverseDepthFirstInOrder(callback) {
-    function traverse(node) {
-      if (node.left) {
-        traverse(node.left);
-      }
-      callback(node);
-      if (node.right) {
-        traverse(node.right);
-      }
+    if (this.left) {
+      this.left.traverseDepthFirstInOrder(callback);
     }
-    traverse(this);
+    callback(this);
+    if (this.right) {
+      this.right.traverseDepthFirstInOrder(callback);
+    }
   }
 }
 module.exports = { BinarySearchTree: BinarySearchTree };
