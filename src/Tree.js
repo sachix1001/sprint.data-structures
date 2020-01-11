@@ -43,7 +43,7 @@ class Tree {
   }
 }
 
-module.exports = { Tree: Tree };
+module.exports = Tree;
 
 /*
 +-------------------------+

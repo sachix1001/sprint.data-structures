@@ -2,7 +2,7 @@
 
 const { expect } = require("chai");
 const { isClass } = require("./utilities");
-const { Tree } = require("../src/Tree");
+const Tree = require("../src/Tree");
 
 let tree;
 describe("Trees", () => {
