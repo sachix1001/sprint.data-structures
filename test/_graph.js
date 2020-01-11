@@ -2,7 +2,7 @@
 
 const { expect } = require("chai");
 const { isClass } = require("./utilities");
-const { Graph } = require("../src/Graph");
+const Graph = require("../src/Graph");
 
 let graph;
 describe("Graphs", () => {

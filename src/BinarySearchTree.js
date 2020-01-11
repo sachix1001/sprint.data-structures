@@ -62,7 +62,7 @@ class BinarySearchTree {
     }
   }
 }
-module.exports = { BinarySearchTree: BinarySearchTree };
+module.exports = BinarySearchTree;
 /*
 |XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 |X                               X
