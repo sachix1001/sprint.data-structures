@@ -12,17 +12,17 @@ class Tree {
 
   contains(value) {
     let result = false;
-
-    if (this.value === value) {
-      result = true;
-      return result;
-    }
-
-    for (let i = 0; i < this.children.length; i++) {
-      if (this.children[i].contains(value)) {
+    function findValue(node) {
+      if (node.value === value) {
         result = true;
       }
+      for (let i = 0; i < node.children.length; i++) {
+        if (node.children[i].contains(value)) {
+          result = true;
+        }
+      }
     }
+    findValue(this);
     return result;
   }
   remove(value) {
